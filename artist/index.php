@@ -11,6 +11,7 @@ $result = mysqli_query($conn, $sql);
     <table class="table table-striped table-bordered">
         <thead>
             <th>Artist id</th>
+            <th>Artist image</th>
             <th>Artist name</th>
             <th>Artist country</th>
         </thead>
@@ -18,7 +19,7 @@ $result = mysqli_query($conn, $sql);
         <?php
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            // echo "<td><img src={$row['img_path']} width='150' height='150' /> </td>";
+            echo "<td><img src={$row['img_path']} width='150' height='150' /> </td>";
             echo "<td>{$row['artist_id']}</td>";
             echo "<td>{$row['artist_name']}</td>";
             echo "<td>{$row['country']}</td>";

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="store.php" method="POST">
+    <form action="store.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label">Artist Name</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="artist_name">
@@ -22,6 +22,11 @@
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Country</label>
             <input type="text" class="form-control" id="exampleInputPassword1" name="country">
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Country</label>
+            <input type="file" class="form-control" id="iamge" name="img_path">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
