@@ -1,6 +1,10 @@
 <?php
+session_start();
 include('../includes/header.php');
 include('../includes/config.php');
+if (! isset($_SESSION['email'])) {
+    header("Location: ../users/login.php");
+}
 $query = "SELECT artist_id, artist_name  FROM artists ORDER BY artist_name DESC";
 $result = mysqli_query($conn, $query);
 ?>

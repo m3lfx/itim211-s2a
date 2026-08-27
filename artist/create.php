@@ -1,3 +1,13 @@
+<?php
+session_start();
+var_dump($_SESSION);
+include('../includes/header.php');
+include('../includes/config.php');
+if (! isset($_SESSION['email'])) {
+    header("Location: ../users/login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

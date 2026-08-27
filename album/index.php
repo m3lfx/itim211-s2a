@@ -1,6 +1,7 @@
 <?php
 include('../includes/header.php');
 include('../includes/config.php');
+include('../includes/alert.php');
 ?>
 
 <body>

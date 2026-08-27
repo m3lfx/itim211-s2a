@@ -1,4 +1,6 @@
 <?php
+session_start();
+var_dump($_SESSION);
 include('../includes/config.php');
 include('../includes/header.php');
 

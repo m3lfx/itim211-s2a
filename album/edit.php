@@ -1,6 +1,9 @@
 <?php
 include('../includes/header.php');
 include('../includes/config.php');
+if (! isset($_SESSION['email'])) {
+    header("Location: ../users/login.php");
+}
 $album_id =  $_GET['id'];
 
 

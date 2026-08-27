@@ -1,7 +1,11 @@
 <?php
+session_start();
+var_dump($_SESSION);
 include('../includes/header.php');
 include('../includes/config.php');
-
+if (! isset($_SESSION['email'])) {
+  header("Location: ../users/login.php");
+}
 //song album artist
 
 $sql = "SELECT s.song_id, s.title AS `song title`, ar.artist_name, al.album_name AS `album title`, s.description FROM artists ar INNER JOIN albums al ON (ar.artist_id = al.artist_id) INNER JOIN songs s ON (s.album_id = al.album_id)";

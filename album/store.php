@@ -1,5 +1,9 @@
 <?php
+session_start();
 include('../includes/config.php');
+if (! isset($_SESSION['email'])) {
+    header("Location: ../users/login.php");
+}
 // var_dump($_POST);
 $album = mysqli_real_escape_string($conn, trim($_POST['album_name']));
 $genre = trim($_POST['genre']);
