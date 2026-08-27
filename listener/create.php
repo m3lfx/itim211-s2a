@@ -10,6 +10,17 @@
 // FOREIGN KEY (user_id)
 // REFERENCES users (user_id)
 // )
+
+CREATE TABLE album_listener(
+listener_id INTEGER  NOT NULL,
+album_id INTEGER NOT NULL,
+review TEXT,
+FOREIGN KEY (listener_id)
+REFERENCES listeners (listener_id),
+FOREIGN KEY (album_id)
+REFERENCES albums (album_id),
+PRIMARY KEY (album_id, listener_id)
+)
 include("../includes/header.php");
 require("../includes/config.php");
 session_start();
