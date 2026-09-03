@@ -95,14 +95,123 @@ print $full_name;
 // $full_name = ucwords(strtolower($full_name));
 // print $full_name;
 
-$start_date = "2000-01-12";
-$date_array = explode("-", $start_date);
-print $date_array[0];
-print $date_array[1];
-print $date_array[2];
-print $start_date;
+// $start_date = "2000-01-12";
+// $date_array = explode("-", $start_date);
+// print $date_array[0];
+// print $date_array[1];
+// print $date_array[2];
+// print $start_date;
 
-print "<pre>\n";
-print preg_match("/aa/", "aardvark advocacy", $array) . "\n";
-print_r($array);
-print "</pre>\n";
+// print "<pre>\n";
+// print preg_match("/aa/", "aardvark advocacy", $array) . "\n";
+// print_r($array);
+// print "</pre>\n";
+
+if (preg_match("/a{2}/", "aaaaazbcda", $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$text = "p?t";
+if (preg_match('/p\?t/', $text, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$text = "pot post pat patent";
+if (preg_match("/^p.?t$/", $text, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+// password min length 6 at least one uppercase, one digit and special character
+//
+//[a-zA-Z_0-9]
+if (preg_match("/[A-Za-z_ 347]+/", "AB dkfd773sxFF", $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+$password = 'password?!#';
+if (strlen($password) >= 6) {
+    if (preg_match("/[\p{P}]+/", $password, $array)) {
+        print "<pre>\n";
+        print_r($array);
+        print "</pre>\n";
+    }
+}
+
+if (preg_match("/^p[^a-z347]+/", "pB dkfd773sxFF", $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+// $text = "pot post pat patent";
+// if (preg_match("/\bp\w+t$/", $text, $array)) {
+//     print "<pre>\n";
+//     print_r($array);
+//     print "</pre>\n";
+// }
+
+$test = "Whatever you do, don't panic!";
+if (preg_match("/(don't)\s+(panic)/", $test, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$test = "158.152.55.35";
+if (preg_match("/(\d+)\.(\d+)\.(\d+)\.(\d+)/", $test, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$test = "tupt-23-0909";
+if (preg_match("/[A-Z]{4}-\d{2}-\d{4}/", $test, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$test = "www.example.com.ph";
+if (preg_match("/www\.example(\.com|\.co\.uk)/", $test, $array)) {
+    print "it is a $array[1] domain<br/>";
+}
+
+$text = "I sell pots, plants, pistachios, pianos and parrots";
+if (preg_match("/\bp\w+s\b/", $text, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$text = "I sell pots, plants, pistachios, pianos and parrots";
+if (preg_match_all("/\bp\w+s\b/", $text, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$test = "Our Secretary, Sarah Williams is pleased to welcome you.";
+print preg_replace("/Sarah Williams/", "Rev. P.W. Goodchild", $test);
+
+$test = "duck you huck you sh!t";
+print preg_replace("/\w+uck/", "****", $test);
+
+$text = "name: matt\noccupation: coder\neyes: blue\n";
+if (preg_match_all("/^\w+:\s+(.*)$/", $text, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
+
+$text = "start with this line\nand you will reach\na conclusion in the end\n";
+if (preg_match("/^(\w+).*?(\w+)$/s", $text, $array)) {
+    print "<pre>\n";
+    print_r($array);
+    print "</pre>\n";
+}
